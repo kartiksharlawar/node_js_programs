@@ -15,5 +15,5 @@ console.log("***Num_pr16.js***")
 }
 console.log(formatToFixed(55.230,1))*/
 let k = 123.456
-let num1 = k.toFixed(2)
+let num1 = k.toFixed(5)
 console.log(num1)
