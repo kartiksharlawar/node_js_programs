@@ -1,24 +1,30 @@
-/*Problem 16 :
-Problem Statement: Write a function isPalindrome that takes a string as input and prints "Palindrome" 
-if the string reads the same backward as forward, and "Not a palindrome" otherwise.
-Example: isPalindrome("racecar") should print "Palindrome".
+/*Problem 17 :
+Problem Statement: Write a function isArmstrongNumber that takes a number as input and prints "Armstrong number" 
+if the sum of its own digits each raised to the power of the number of digits is equal to the number itself, 
+and "Not an Armstrong number" otherwise.
+Example: isArmstrongNumber(153) should print "Armstrong number".
 
 .
 */
+var readlineSync = require('readline-sync');
+function isArmstrongNumber(number) {
+    let strNumber = number.toString();
+    let n = strNumber.length;
+    let sum = 0;
 
-function isPalindrome(Str) {
-    let Value =Str.split('');
-    console.log(Value);
-    let reverseValue=Value.reverse();
-    console.log(Value.reverse());
-    let reverseStr =  reverseValue.join('')
-    console.log(reverseValue.join(''))
-    if (Str == reverseStr){
-        return "Palindrome";
+
+
+
+    for (let digit of strNumber) {
+        sum += Math.pow(parseInt(digit), n);
+    }
+
+
+    if (sum === number) {
+        console.log("Armstrong number");
     } else {
-        return "Not a palindrome"
+        console.log("Not an Armstrong number");
     }
 }
 
-console.log(isPalindrome("racecar"));   
-
+console.log(isArmstrongNumber(readlineSync.questionInt("Enter number:")));
